@@ -1,0 +1,12 @@
+jmq:
+  broker:
+    brokerId: jmq-broker-001
+    clusterMulticastGroupIp: 239.192.0.1
+    clusterStaticIps: 192.168.0.66:47500..47509,192.168.0.68:47500..47509
+
+logging:
+  level:
+    root: info
+    github.microgalaxy.mqtt.broker: debug
+
+

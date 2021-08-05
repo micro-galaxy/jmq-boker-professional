@@ -1,0 +1,154 @@
+{
+  "groups": [
+    {
+      "name": "jmq.broker",
+      "type": "github.microgalaxy.mqtt.broker.config.BrokerProperties",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties"
+    },
+    {
+      "name": "jmq.broker.cache",
+      "type": "github.microgalaxy.mqtt.broker.config.BrokerCacheProperties",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerCacheProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "jmq.broker.broker-id",
+      "type": "java.lang.String",
+      "description": "节点id",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties"
+    },
+    {
+      "name": "jmq.broker.ca-certificate-dir",
+      "type": "java.lang.String",
+      "description": "CA 证书目录相对目录，项目目录下",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties",
+      "defaultValue": "ssl"
+    },
+    {
+      "name": "jmq.broker.cache.file-persistence-initial-size",
+      "type": "java.lang.Integer",
+      "description": "持久化磁盘缓存初始化大小,MB",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerCacheProperties",
+      "defaultValue": 64
+    },
+    {
+      "name": "jmq.broker.cache.file-persistence-max-size",
+      "type": "java.lang.Integer",
+      "description": "持久化磁盘缓存最大大小,MB",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerCacheProperties",
+      "defaultValue": 128
+    },
+    {
+      "name": "jmq.broker.cache.memory-persistence-initial-size",
+      "type": "java.lang.Integer",
+      "description": "持久化内存缓存初始化大小,MB",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerCacheProperties",
+      "defaultValue": 64
+    },
+    {
+      "name": "jmq.broker.cache.memory-persistence-max-size",
+      "type": "java.lang.Integer",
+      "description": "持久化内存缓存最大大小,MB",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerCacheProperties",
+      "defaultValue": 128
+    },
+    {
+      "name": "jmq.broker.cluster-multicast-group-ip",
+      "type": "java.lang.String",
+      "description": "集群配置, 基于组播发现",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties"
+    },
+    {
+      "name": "jmq.broker.cluster-static-ips",
+      "type": "java.lang.String[]",
+      "description": "集群配置, 当组播模式禁用时, 使用静态IP开启配置集群",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties"
+    },
+    {
+      "name": "jmq.broker.enable-multicast-group",
+      "type": "java.lang.Boolean",
+      "description": "集群配置, 是否基于组播发现, 默认开启 <p> 默认spi发现服务端口：47500-47509 数据交换端口：47100-47109",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "jmq.broker.keep-alive",
+      "type": "java.lang.Integer",
+      "description": "心跳检测时间(秒), 默认值60秒； 客户端连接时可指定 @link https:\/\/docs.oasis-open.org\/mqtt\/mqtt\/v5.0\/os\/mqtt-v5.0-os.html#_Toc3901045",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties",
+      "defaultValue": 60
+    },
+    {
+      "name": "jmq.broker.mqtt-port",
+      "type": "java.lang.Integer",
+      "description": "mqtt默认端口：1883",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties",
+      "defaultValue": 1883
+    },
+    {
+      "name": "jmq.broker.mqtt-ssl-port",
+      "type": "java.lang.Integer",
+      "description": "mqtt ssl默认端口：8883",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties",
+      "defaultValue": 8883
+    },
+    {
+      "name": "jmq.broker.mqtt-ws-port",
+      "type": "java.lang.Integer",
+      "description": "websocket 默认端口：8083",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties",
+      "defaultValue": 8083
+    },
+    {
+      "name": "jmq.broker.mqtt-wss-port",
+      "type": "java.lang.Integer",
+      "description": "websocket ssl默认端口：8084",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties",
+      "defaultValue": 8084
+    },
+    {
+      "name": "jmq.broker.payload-length",
+      "type": "java.lang.Integer",
+      "description": "MqttDecoder参数, MqttDecoder 单次发送数据大小，默认：8092 bytes",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties",
+      "defaultValue": 8092
+    },
+    {
+      "name": "jmq.broker.so-backlog",
+      "type": "java.lang.Integer",
+      "description": "Sokcet参数, 存放已完成三次握手请求的队列最大长度",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties",
+      "defaultValue": 512
+    },
+    {
+      "name": "jmq.broker.so-keep-alive",
+      "type": "java.lang.Boolean",
+      "description": "Socket参数, 是否开启心跳保活机制, 默认开启",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "jmq.broker.tcp-no-delay",
+      "type": "java.lang.Boolean",
+      "description": "TCP参数, 是否禁用Nagle算法，默认禁用",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "jmq.broker.use-epoll",
+      "type": "java.lang.Boolean",
+      "description": "是否开启Epoll模式, 默认关闭",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "jmq.broker.ws-path",
+      "type": "java.lang.String",
+      "description": "websocket path默认值：\/mqtt",
+      "sourceType": "github.microgalaxy.mqtt.broker.config.BrokerProperties",
+      "defaultValue": "\/mqtt"
+    }
+  ],
+  "hints": []
+}

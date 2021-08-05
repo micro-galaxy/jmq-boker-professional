@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="core" />
+        <module name="common" />
+        <module name="dashboard" />
+        <module name="plugin" />
+        <module name="starter" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common" target="1.8" />
+      <module name="core" target="1.8" />
+      <module name="dashboard" target="1.8" />
+      <module name="jmq-broker" target="1.8" />
+      <module name="plugin" target="1.8" />
+      <module name="starter" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common" options="-parameters" />
+      <module name="core" options="-parameters" />
+      <module name="dashboard" options="-parameters" />
+      <module name="plugin" options="-parameters" />
+      <module name="starter" options="-parameters" />
+    </option>
+  </component>
+</project>
