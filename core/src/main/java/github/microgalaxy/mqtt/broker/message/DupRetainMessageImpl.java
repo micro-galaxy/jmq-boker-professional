@@ -1,8 +1,12 @@
 package github.microgalaxy.mqtt.broker.message;
 
 import github.microgalaxy.mqtt.broker.util.TopicUtils;
+import org.apache.ignite.IgniteCache;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -13,7 +17,8 @@ import java.util.stream.Collectors;
  */
 @Component
 public class DupRetainMessageImpl implements IDupRetainMessage {
-    private final Map<String, RetainMessage> retainMessageCatch = new ConcurrentHashMap<>();
+    @Resource
+    private IgniteCache<String, RetainMessage> retainMessageCatch;
 
     @Override
     public void put(String topic, RetainMessage retainMessage) {
@@ -27,10 +32,12 @@ public class DupRetainMessageImpl implements IDupRetainMessage {
 
     @Override
     public List<RetainMessage> match(String subscribeTopic) {
-        return retainMessageCatch.entrySet().stream()
-                .filter(v -> TopicUtils.matchingTopic(subscribeTopic,v.getKey()))
-                .map(Map.Entry::getValue)
-                .collect(Collectors.toList());
+        List<RetainMessage> matchedTopics = new ArrayList<>();
+        retainMessageCatch.forEach(en -> {
+            boolean matched = TopicUtils.matchingTopic(subscribeTopic, en.getKey());
+            if (matched) matchedTopics.add(en.getValue());
+        });
+        return matchedTopics;
     }
 
     @Override

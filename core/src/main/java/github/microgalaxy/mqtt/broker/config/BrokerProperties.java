@@ -84,12 +84,12 @@ public class BrokerProperties {
     /**
      * 集群配置, 基于组播发现
      */
-    private String clusterMulticastGroupIp;
+    private String clusterMulticastGroupIp = "239.192.0.1";
 
     /**
      * 集群配置, 当组播模式禁用时, 使用静态IP开启配置集群
      */
-    private String[] clusterStaticIps;
+    private String[] clusterStaticIps = new String[]{};
 
     public String getBrokerId() {
         return brokerId;

@@ -29,6 +29,7 @@
     <orderEntry type="library" name="Maven: javax.cache:cache-api:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains:annotations:16.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.gridgain:ignite-shmem:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.h2database:h2:1.4.197" level="project" />
     <orderEntry type="library" name="Maven: org.apache.ignite:ignite-indexing:2.9.0" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.14" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-core:7.4.0" level="project" />
@@ -36,7 +37,6 @@
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-queryparser:7.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-queries:7.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-sandbox:7.4.0" level="project" />
-    <orderEntry type="library" name="Maven: com.h2database:h2:1.4.200" level="project" />
     <orderEntry type="library" name="Maven: org.apache.ignite:ignite-slf4j:2.9.0" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.3.9.RELEASE" level="project" />

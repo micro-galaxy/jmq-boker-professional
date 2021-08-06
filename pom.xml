@@ -30,6 +30,7 @@
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
         <ignite.version>2.9.0</ignite.version>
+        <h2.version>1.4.197</h2.version>
     </properties>
     <!--依赖管理-->
     <dependencyManagement>
@@ -73,10 +74,18 @@
             <version>${ignite.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.ignite</groupId>
             <artifactId>ignite-indexing</artifactId>
             <version>${ignite.version}</version>
         </dependency>
+
+
+
         <dependency>
             <groupId>org.apache.ignite</groupId>
             <artifactId>ignite-slf4j</artifactId>

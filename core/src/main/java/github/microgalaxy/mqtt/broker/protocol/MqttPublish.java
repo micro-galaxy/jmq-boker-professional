@@ -49,6 +49,10 @@ public class MqttPublish<T extends MqttMessageType, M extends MqttPublishMessage
     @Override
     public void onMqttMsg(Channel channel, M msg) {
         String topic = msg.variableHeader().topicName();
+        if (!TopicUtils.validTopic(topic)) throw new MqttException(
+                (int) MqttConnectReturnCode.CONNECTION_REFUSED_MALFORMED_PACKET.byteValue(),
+                false, "<== PUBLISH - Topic is not valid");
+
         MqttQoS mqttQoS = msg.fixedHeader().qosLevel();
         ByteBuf payload = msg.payload();
         byte[] messageBytes = new byte[payload.readableBytes()];
