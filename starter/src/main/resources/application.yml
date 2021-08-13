@@ -1,7 +1,11 @@
 jmq:
   broker:
-    brokerId: jmq-broker-001
+    brokerId: jmq-broker-002
     clusterMulticastGroupIp: 239.192.0.1
+    mqtt-port: 1884
+    mqtt-ssl-port: 8886
+    mqtt-ws-port: 8086
+    mqtt-wss-port: 8088
 #    clusterStaticIps: 192.168.0.66:47500..47509,192.168.0.68:47500..47509
 
 logging:

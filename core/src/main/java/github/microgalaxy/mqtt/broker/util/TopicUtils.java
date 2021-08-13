@@ -108,6 +108,7 @@ public abstract class TopicUtils {
     }
 
     private static String shareToBaseTopic(String shareTopic) {
+        if(!shareTopic.startsWith(BrokerConstant.ShareSubscribe.SUBSCRIBE_SHARE_PREFIX))return shareTopic;
         // $share/{group}
         int shareTier = 2;
         String[] shareTopicSplit = shareTopic.split(BrokerConstant.ShareSubscribe.SUBSCRIBE_TIER_SPLIT);

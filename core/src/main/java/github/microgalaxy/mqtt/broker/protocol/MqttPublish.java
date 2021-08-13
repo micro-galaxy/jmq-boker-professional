@@ -16,9 +16,11 @@ import io.netty.handler.codec.mqtt.*;
 import io.netty.util.AttributeKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 /**
  * 发布消息
@@ -64,13 +66,6 @@ public class MqttPublish<T extends MqttMessageType, M extends MqttPublishMessage
                 .payload(payload)
                 .retained(false)
                 .build();
-        InternalMessage internalMessage = new InternalMessage();
-        internalMessage.setTopic(publishMessage.variableHeader().topicName());
-        internalMessage.setQos(publishMessage.fixedHeader().qosLevel());
-        internalMessage.setPayload(messageBytes);
-        internalMessage.setRetain(false);
-        internalMessage.setDup(false);
-
         if (MqttQoS.AT_LEAST_ONCE == mqttQoS) {
             sendPubAckMessage(channel, msg.variableHeader().packetId());
         }
@@ -78,8 +73,18 @@ public class MqttPublish<T extends MqttMessageType, M extends MqttPublishMessage
             sendPubRecMessage(channel, msg.variableHeader().packetId());
         }
 
-        internalCommunicationServer.sendInternalMessage(internalMessage);
-        sendPublishMessage(publishMessage);
+        Collection<Subscribe> subscribes = getTargetSubscribe(publishMessage.variableHeader().topicName());
+        if (!CollectionUtils.isEmpty(subscribes)) {
+            InternalMessage internalMessage = new InternalMessage();
+            internalMessage.setJmqIds(subscribes.stream().map(Subscribe::getJmqId).collect(Collectors.toSet()));
+            internalMessage.setTopic(publishMessage.variableHeader().topicName());
+            internalMessage.setQos(publishMessage.fixedHeader().qosLevel());
+            internalMessage.setPayload(messageBytes);
+            internalMessage.setRetain(false);
+            internalMessage.setDup(false);
+            internalCommunicationServer.sendInternalMessage(internalMessage);
+            sendPublishMessage(publishMessage, subscribes);
+        }
         if (msg.fixedHeader().isRetain()) {
             if (messageBytes.length == 0) {
                 dupRetainMessageServer.remove(topic);
@@ -88,6 +93,12 @@ public class MqttPublish<T extends MqttMessageType, M extends MqttPublishMessage
                 dupRetainMessageServer.put(topic, retainMessage);
             }
         }
+    }
+
+    public Collection<Subscribe> getTargetSubscribe(String topicName) {
+        Collection<Subscribe> shareSubscribes = subscribeStoreServer.matchShareTopic(topicName);
+        Collection<Subscribe> subscribes = subscribeStoreServer.matchTopic(topicName);
+        return TopicUtils.filterTopic(shareSubscribes, subscribes);
     }
 
     @Override
@@ -138,10 +149,7 @@ public class MqttPublish<T extends MqttMessageType, M extends MqttPublishMessage
                     channel.attr(AttributeKey.valueOf("clientId")).get(), packetId);
     }
 
-    public void sendPublishMessage(MqttPublishMessage publishMessage) {
-        Collection<Subscribe> shareSubscribes = subscribeStoreServer.matchShareTopic(publishMessage.variableHeader().topicName());
-        Collection<Subscribe> subscribes = subscribeStoreServer.matchTopic(publishMessage.variableHeader().topicName());
-        Collection<Subscribe> sendSubscribes = TopicUtils.filterTopic(shareSubscribes, subscribes);
+    public void sendPublishMessage(MqttPublishMessage publishMessage, Collection<Subscribe> sendSubscribes) {
         ByteBuf payload = publishMessage.payload();
         byte[] messageBytes = new byte[payload.readableBytes()];
         payload.getBytes(payload.readableBytes(), messageBytes);
@@ -173,6 +181,6 @@ public class MqttPublish<T extends MqttMessageType, M extends MqttPublishMessage
         String clientId = (String) channel.attr(AttributeKey.valueOf("clientId")).get();
         Session session = sessionStoreServer.get(clientId);
         if (ObjectUtils.isEmpty(session) || ObjectUtils.isEmpty(session.getWillMessage())) return;
-        sendPublishMessage(session.getWillMessage());
+        sendPublishMessage(session.getWillMessage(),getTargetSubscribe(session.getWillMessage().variableHeader().topicName()));
     }
 }

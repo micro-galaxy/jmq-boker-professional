@@ -1,11 +1,11 @@
 package github.microgalaxy.mqtt.broker.internal;
 
 
-import io.netty.buffer.ByteBuf;
 import io.netty.handler.codec.mqtt.MqttQoS;
-import org.springframework.lang.Nullable;
 
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * ignite内部消息
@@ -15,8 +15,7 @@ import java.io.Serializable;
 public final class InternalMessage implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Nullable
-    private String clientId;
+    private Collection<String> jmqIds;
 
     private String topic;
 
@@ -28,13 +27,12 @@ public final class InternalMessage implements Serializable {
 
     private boolean dup;
 
-    @Nullable
-    public String getClientId() {
-        return clientId;
+    public Collection<String> getJmqIds() {
+        return jmqIds;
     }
 
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
+    public void setJmqIds(Collection<String> jmqIds) {
+        this.jmqIds = jmqIds;
     }
 
     public String getTopic() {
