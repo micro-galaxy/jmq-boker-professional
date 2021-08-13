@@ -1,9 +1,11 @@
 package github.microgalaxy.mqtt.broker.client;
 
 import github.microgalaxy.mqtt.broker.config.BrokerConstant;
+import github.microgalaxy.mqtt.broker.config.BrokerProperties;
 import github.microgalaxy.mqtt.broker.message.RetainMessage;
 import github.microgalaxy.mqtt.broker.util.TopicUtils;
 import org.apache.ignite.IgniteCache;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
@@ -21,6 +23,8 @@ public class SubscribeStoreImpl implements ISubscribeStore {
     private IgniteCache<String, ConcurrentHashMap<String, Subscribe>> clientSubscribeCatch;
     @Resource
     private IgniteCache<String, ConcurrentHashMap<String, Subscribe>> clientShareSubscribeCatch;
+    @Autowired
+    private BrokerProperties brokerProperties;
 
     @Override
     public void put(String topic, Subscribe subscribe) {
@@ -87,7 +91,7 @@ public class SubscribeStoreImpl implements ISubscribeStore {
     public Collection<Subscribe> matchShareTopic(String publishTopic) {
         List<Subscribe> matchedTopics = new ArrayList<>();
         clientShareSubscribeCatch.forEach(s -> {
-            boolean matched = TopicUtils.matchingTopic(s.getKey(), publishTopic);
+            boolean matched = TopicUtils.matchingShareTopic(s.getKey(), publishTopic);
             if (matched) matchedTopics.addAll(s.getValue().values());
         });
         return matchedTopics;
@@ -107,10 +111,11 @@ public class SubscribeStoreImpl implements ISubscribeStore {
 
     @Override
     public boolean repeatSubscribe(String clientId, String topic) {
-        Object subscribe = Optional.ofNullable(clientSubscribeCatch.get(topic))
+        Subscribe subscribe = Optional.ofNullable(clientSubscribeCatch.get(topic))
                 .orElse(new ConcurrentHashMap<>(0)).get(clientId);
-        Object shareSubscribe = Optional.ofNullable(clientShareSubscribeCatch.get(topic))
+        Subscribe shareSubscribe = Optional.ofNullable(clientShareSubscribeCatch.get(topic))
                 .orElse(new ConcurrentHashMap<>(0)).get(clientId);
-        return !ObjectUtils.isEmpty(subscribe) || !ObjectUtils.isEmpty(shareSubscribe);
+        return (!ObjectUtils.isEmpty(subscribe) && brokerProperties.getBrokerId().equals(subscribe.getJmqId()))
+                || (!ObjectUtils.isEmpty(shareSubscribe) && brokerProperties.getBrokerId().equals(shareSubscribe.getJmqId()));
     }
 }
