@@ -6,6 +6,8 @@ import org.apache.logging.log4j.util.Strings;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
+import java.net.InetAddress;
+import java.net.NetworkInterface;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -117,5 +119,28 @@ public abstract class TopicUtils {
             return shareTopicSplit[i];
         }).filter(v -> !Objects.equals(v, Strings.EMPTY))
                 .collect(Collectors.joining(BrokerConstant.ShareSubscribe.SUBSCRIBE_TIER_SPLIT));
+    }
+
+    public static String getMacIp() {
+        try {
+            Enumeration<NetworkInterface> faces = NetworkInterface.getNetworkInterfaces();
+            while (faces.hasMoreElements()) {
+                NetworkInterface face = faces.nextElement();
+                if (face.isLoopback() || face.isVirtual() || !face.isUp()) {
+                    continue;
+                }
+                Enumeration<InetAddress> address = face.getInetAddresses();
+                while (address.hasMoreElements()) {
+                    InetAddress addr = address.nextElement();
+                    if (!addr.isLoopbackAddress() && addr.isSiteLocalAddress() && !addr.isAnyLocalAddress()) {
+                        return addr.getHostAddress();
+                    }
+                }
+            }
+            return InetAddress.getLocalHost().getHostAddress();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }

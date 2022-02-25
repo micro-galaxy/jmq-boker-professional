@@ -1,16 +1,44 @@
 jmq:
   broker:
-    brokerId: jmq-broker-002
-    clusterMulticastGroupIp: 239.192.0.1
-    mqtt-port: 1884
-    mqtt-ssl-port: 8886
-    mqtt-ws-port: 8086
-    mqtt-wss-port: 8088
+#    brokerId: jmq-broker-001
+#    brokerId: jmq-broker-003
+#    clusterMulticastGroupIp: 239.192.0.1
+#    clusterKey: rhgXFetJVIwsH85pDwXDb7U8D78pq9wS
+#    mqtt-port: 1889
+#    mqtt-ssl-port: 8889
+#    mqtt-ws-port: 8089
+#    mqtt-wss-port: 8089
 #    clusterStaticIps: 192.168.0.66:47500..47509,192.168.0.68:47500..47509
+#    version: @jmq-broker.version@
+
+#jmq:
+#  broker:
+    brokerId: jmq-broker-001
+    clusterMulticastGroupIp: 239.192.0.1
+    clusterKey: rhgXFetJVIwsH85pDwXDb7U8D78pq9wS
+    mqtt-port: 1883
+    mqtt-ssl-port: 8883
+    mqtt-ws-port: 8083
+    mqtt-wss-port: 8083
+##    clusterStaticIps: 192.168.0.66:47500..47509,192.168.0.68:47500..47509
+    version: @jmq-broker.version@
+
+#    brokerId: jmq-broker-000
+#    clusterMulticastGroupIp: 239.192.0.1
+#    clusterKey: rhgXFetJVIwsH85pDwXDb7U8D78pq9wS
+#    mqtt-port: 1880
+#    mqtt-ssl-port: 8880
+#    mqtt-ws-port: 8080
+#    mqtt-wss-port: 8080
+
+http:
+  server:
+    port: 1222
 
 logging:
   level:
     root: info
     github.microgalaxy.mqtt.broker: debug
+    github.microgalaxy.mqtt.broker.server.http: error
 
 

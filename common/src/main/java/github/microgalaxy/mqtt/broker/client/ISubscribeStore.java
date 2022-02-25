@@ -11,18 +11,19 @@ public interface ISubscribeStore {
     /**
      * 订阅客户端存储
      *
-     * @param topic
-     * @param subscribe
+     * @param subscribes
+     * @return putIfAbsent and Forced coverage
      */
-    void put(String topic, Subscribe subscribe);
+    Collection<Subscribe> put(Collection<Subscribe> subscribes);
 
     /**
      * 取消订阅
      *
-     * @param topic
      * @param clientId
+     * @param topics
+     * @return
      */
-    void remove(String topic, String clientId);
+    Collection<String> remove(String clientId, Collection<String> topics);
 
     /**
      * 取消client订阅

@@ -5,21 +5,27 @@ import github.microgalaxy.mqtt.broker.client.ISubscribeStore;
 import github.microgalaxy.mqtt.broker.client.Session;
 import github.microgalaxy.mqtt.broker.client.Subscribe;
 import github.microgalaxy.mqtt.broker.config.BrokerProperties;
+import github.microgalaxy.mqtt.broker.event.IBrokerEvent;
 import github.microgalaxy.mqtt.broker.handler.MqttException;
 import github.microgalaxy.mqtt.broker.message.IMessagePacketId;
 import github.microgalaxy.mqtt.broker.message.RetainMessage;
 import github.microgalaxy.mqtt.broker.nettyex.MqttConnectReturnCodeEx;
 import github.microgalaxy.mqtt.broker.message.IDupRetainMessage;
+import github.microgalaxy.mqtt.broker.util.MqttEventUtils;
 import github.microgalaxy.mqtt.broker.util.TopicUtils;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.mqtt.*;
 import io.netty.util.AttributeKey;
+import org.omg.CORBA.Object;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -29,6 +35,9 @@ import java.util.stream.Collectors;
  */
 @Component
 public class MqttSubscribe<T extends MqttMessageType, M extends MqttSubscribeMessage> extends AbstractMqttMsgProtocol<T, M> {
+    @Autowired
+    @Lazy
+    private IBrokerEvent brokerEventAdapter;
     @Autowired
     private BrokerProperties brokerProperties;
     @Autowired
@@ -64,19 +73,15 @@ public class MqttSubscribe<T extends MqttMessageType, M extends MqttSubscribeMes
 
         //store subscribe
         long now = System.currentTimeMillis();
-        subTopics.forEach(t -> {
+        List<Subscribe> subscribes = subTopics.stream().map(t -> {
             Subscribe subscribe = new Subscribe(session.getClientId(), t.topicName(),
-                    t.qualityOfService(),brokerProperties.getBrokerId(),now);
-            if(subscribeStoreServer.repeatSubscribe(subscribe.getClientId(),subscribe.getTopic()))
-                throw new MqttException(MqttVersion.MQTT_5 == session.getMqttProtocolVersion() ?
-                        (int) MqttConnectReturnCode.CONNECTION_REFUSED_SERVER_UNAVAILABLE.byteValue() :
-                        (int) MqttConnectReturnCode.CONNECTION_REFUSED_TOPIC_NAME_INVALID.byteValue(),
-                        false, "SUBSCRIBE - Repeat subscribe,reason: Client subscribe already exists");
-
-            subscribeStoreServer.put(t.topicName(), subscribe);
-            if (log.isDebugEnabled())
-                log.debug("SUBSCRIBE - Client subscribe topic: clientId:{}, topic:{}", session.getClientId(), t);
-        });
+                    t.qualityOfService(), brokerProperties.getBrokerId(), now);
+            return subscribe;
+        }).collect(Collectors.toList());
+        Collection<Subscribe> putList = subscribeStoreServer.put(subscribes);
+        if (log.isDebugEnabled())
+            log.debug("SUBSCRIBE - Client subscribe topic: clientId:{}, topics:{}", session.getClientId(), subscribes);
+        MqttEventUtils.onTopicSubEvent(session.getClientId(), putList, brokerEventAdapter, sessionServer);
         //send retain message
         subTopics.forEach(s -> sendRetainMessage(channel, s.topicName(), s.qualityOfService()));
     }

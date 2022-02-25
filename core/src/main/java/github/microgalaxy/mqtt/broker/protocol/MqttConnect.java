@@ -1,21 +1,28 @@
 package github.microgalaxy.mqtt.broker.protocol;
 
-import github.microgalaxy.mqtt.broker.auth.LoginAuth;
-import github.microgalaxy.mqtt.broker.auth.LoginAuthInterface;
+import github.microgalaxy.mqtt.broker.auth.ClientLoginAuth;
+import github.microgalaxy.mqtt.broker.auth.IClientLoginAuth;
 import github.microgalaxy.mqtt.broker.client.ISessionStore;
 import github.microgalaxy.mqtt.broker.client.ISubscribeStore;
 import github.microgalaxy.mqtt.broker.client.Session;
 import github.microgalaxy.mqtt.broker.config.BrokerProperties;
+import github.microgalaxy.mqtt.broker.event.IBrokerEvent;
 import github.microgalaxy.mqtt.broker.handler.MqttException;
+import github.microgalaxy.mqtt.broker.internal.InternalCommunicationAdapter;
+import github.microgalaxy.mqtt.broker.internal.model.CtrlType;
+import github.microgalaxy.mqtt.broker.internal.model.InternalIgniteCtrlMessage;
 import github.microgalaxy.mqtt.broker.message.IDupPubRelMessage;
 import github.microgalaxy.mqtt.broker.message.IDupPublishMessage;
+import github.microgalaxy.mqtt.broker.util.MqttEventUtils;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.mqtt.*;
 import io.netty.handler.timeout.IdleStateHandler;
 import io.netty.util.AttributeKey;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
@@ -29,7 +36,10 @@ import java.net.InetSocketAddress;
 @Component
 public class MqttConnect<T extends MqttMessageType, M extends MqttConnectMessage> extends AbstractMqttMsgProtocol<T, M> {
     @Autowired
-    private LoginAuthInterface authServer;
+    @Lazy
+    private IBrokerEvent brokerEventAdapter;
+    @Autowired
+    private IClientLoginAuth authServer;
     @Autowired
     private ISessionStore sessionServer;
     @Autowired
@@ -40,6 +50,8 @@ public class MqttConnect<T extends MqttMessageType, M extends MqttConnectMessage
     private IDupPubRelMessage dupPubRelMessageServer;
     @Autowired
     private BrokerProperties brokerProperties;
+    @Autowired
+    private InternalCommunicationAdapter<Object> internalCommunicationAdapter;
 
     /**
      * 发起连接消息
@@ -73,10 +85,8 @@ public class MqttConnect<T extends MqttMessageType, M extends MqttConnectMessage
                 .sessionPresent(false)
                 .build();
         channel.writeAndFlush(connAckMessage);
-        if (ex.isDisConnect()) {
-            channel.close();
-            log.info(ex.getMessage());
-        }
+        channel.close();
+        log.info(ex.getMessage());
     }
 
     private void validMsgFormat(Channel channel, M msg) {
@@ -103,7 +113,7 @@ public class MqttConnect<T extends MqttMessageType, M extends MqttConnectMessage
         MqttVersion mqttVersion = MqttVersion.fromProtocolNameAndLevel(msg.variableHeader().name(), (byte) msg.variableHeader().version());
         MqttConnectPayload payload = msg.payload();
         InetSocketAddress socketAddress = (InetSocketAddress) channel.remoteAddress();
-        LoginAuth loginMode = new LoginAuth(payload.clientIdentifier(), payload.userName(), payload.password(),
+        ClientLoginAuth loginMode = new ClientLoginAuth(payload.clientIdentifier(), payload.userName(), payload.password(),
                 socketAddress.getHostString(), mqttVersion.name(), socketAddress.getPort());
         boolean authOk = authServer.loginAuth(loginMode);
         if (!authOk)
@@ -117,17 +127,15 @@ public class MqttConnect<T extends MqttMessageType, M extends MqttConnectMessage
     private void singleLogin(Channel channel, M msg) {
         MqttVersion mqttVersion = MqttVersion.fromProtocolNameAndLevel(msg.variableHeader().name(), (byte) msg.variableHeader().version());
         String clientId = msg.payload().clientIdentifier();
+        //分布式环境下，需要发送内部消息踢掉较早的客户端
         Session previousSession = sessionServer.get(clientId);
         if (!ObjectUtils.isEmpty(previousSession)) {
-            if (previousSession.isCleanSession()) {
-                sessionServer.remove(clientId);
-                subscribeStoreServer.removeClient(clientId);
-                dupPublishMessageServer.removeClient(clientId);
-                dupPubRelMessageServer.removeClient(clientId);
-            }else {
-                subscribeStoreServer.upNode(clientId,brokerProperties.getBrokerId());
+            if (ObjectUtils.isEmpty(previousSession.getChannel())) {
+                InternalIgniteCtrlMessage<CtrlType, String> ctrlMessage = new InternalIgniteCtrlMessage<>(CtrlType.REMOVE_SESSION, clientId);
+                internalCommunicationAdapter.sendInternalMessage(ctrlMessage);
+            } else {
+                removeGlobalSession(clientId);
             }
-            previousSession.getChannel().close();
         }
         //will message
         MqttPublishMessage willMessage = null;
@@ -139,17 +147,39 @@ public class MqttConnect<T extends MqttMessageType, M extends MqttConnectMessage
                     .retained(msg.variableHeader().isWillRetain())
                     .build();
         }
-        channel.attr(AttributeKey.valueOf("clientId")).set(msg.payload().clientIdentifier());
+        channel.attr(AttributeKey.valueOf("clientId")).set(clientId);
         channel.attr(AttributeKey.valueOf("mqttVersion")).set(mqttVersion);
-        Session curSession = new Session(clientId, msg.payload().userName(), channel,
-                msg.variableHeader().isCleanSession(), willMessage, mqttVersion);
+        InetSocketAddress ipSocket = (InetSocketAddress) channel.remoteAddress();
+        String clientIp = String.join(":", ipSocket.getAddress().getHostAddress(), ipSocket.getPort() + "");
+        Session curSession = new Session(brokerProperties.getBrokerId(), clientId, msg.payload().userName(), clientIp,
+                channel, msg.variableHeader().keepAliveTimeSeconds(),
+                msg.variableHeader().isCleanSession(), willMessage, mqttVersion,System.currentTimeMillis());
         sessionServer.put(clientId, curSession);
 
         MqttConnAckMessage connAckMessage = MqttMessageBuilders.connAck().returnCode(MqttConnectReturnCode.CONNECTION_ACCEPTED)
                 .sessionPresent(!msg.variableHeader().isCleanSession())
                 .build();
         channel.writeAndFlush(connAckMessage);
+        MqttEventUtils.onClientConnectedEvent(clientId,brokerEventAdapter,sessionServer);
+        channel.closeFuture().addListener(future -> {
+            MqttEventUtils.onClientDisconnectedEvent(curSession,brokerEventAdapter);
+        });
         log.info("CONNECT - Client connected: clientId:{}, mqttVersion: {}, clearSession:{}", clientId, mqttVersion, msg.variableHeader().isCleanSession());
+    }
+
+    public void removeGlobalSession(String clientId) {
+        Assert.hasLength(clientId, "ClientId cant be empty.");
+        Session previousSession = sessionServer.get(clientId);
+        if (ObjectUtils.isEmpty(previousSession.getChannel())) return;
+        if (previousSession.isCleanSession()) {
+            sessionServer.remove(clientId);
+            subscribeStoreServer.removeClient(clientId);
+            dupPublishMessageServer.removeClient(clientId);
+            dupPubRelMessageServer.removeClient(clientId);
+        } else {
+            subscribeStoreServer.upNode(clientId, brokerProperties.getBrokerId());
+        }
+        previousSession.getChannel().close();
     }
 
 

@@ -1,7 +1,17 @@
 package github.microgalaxy.mqtt.broker.config;
 
+import org.jetbrains.annotations.NotNull;
+import org.springframework.beans.BeansException;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.event.EventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * 服务配置
@@ -10,7 +20,11 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ConfigurationProperties("jmq.broker")
-public class BrokerProperties {
+public class BrokerProperties implements ApplicationContextAware {
+    private static ApplicationContext applicationContext;
+
+    private final List<Consumer<Class<?>>> onBeanReadyEvents = new ArrayList<>();
+
     /**
      * 节点id
      */
@@ -87,9 +101,19 @@ public class BrokerProperties {
     private String clusterMulticastGroupIp = "239.192.0.1";
 
     /**
+     * 集群认证密钥
+     */
+    private String clusterKey;
+
+    /**
      * 集群配置, 当组播模式禁用时, 使用静态IP开启配置集群
      */
     private String[] clusterStaticIps = new String[]{};
+
+    /**
+     * Jmq版本信息
+     */
+    private String version;
 
     public String getBrokerId() {
         return brokerId;
@@ -203,6 +227,14 @@ public class BrokerProperties {
         this.enableMulticastGroup = enableMulticastGroup;
     }
 
+    public String getClusterKey() {
+        return clusterKey;
+    }
+
+    public void setClusterKey(String clusterKey) {
+        this.clusterKey = clusterKey;
+    }
+
     public String getClusterMulticastGroupIp() {
         return clusterMulticastGroupIp;
     }
@@ -217,5 +249,31 @@ public class BrokerProperties {
 
     public void setClusterStaticIps(String[] clusterStaticIps) {
         this.clusterStaticIps = clusterStaticIps;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    @Override
+    public void setApplicationContext(@NotNull ApplicationContext applicationContext) throws BeansException {
+        BrokerProperties.applicationContext = applicationContext;
+    }
+
+    public ApplicationContext getApplicationContext() {
+        return applicationContext;
+    }
+
+    public void addOnBeanReadyEvent(Consumer<Class<?>> onBeanReadyEvent) {
+        this.onBeanReadyEvents.add(onBeanReadyEvent);
+    }
+
+    @EventListener(ApplicationReadyEvent.class)
+    public void onInitBeanDone() {
+        onBeanReadyEvents.forEach(v -> v.accept(ApplicationReadyEvent.class));
     }
 }

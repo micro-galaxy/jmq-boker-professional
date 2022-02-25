@@ -21,16 +21,16 @@ public class MessagePacketIdImpl implements IMessagePacketId {
     private final int MAX_PACKET_ID     =   1 << 16 - 1;
     private int currentPacketId         =   MIN_PACKET_ID;
     @Resource
-    private IgniteCache<Integer, Integer> messageIdCatch;
+    private IgniteCache<Integer, Integer> messageIdCache;
 
     @Override
     public int nextMessageId(MqttVersion mqttVersion) {
-        Lock lock = messageIdCatch.lock(0);
+        Lock lock = messageIdCache.lock(0);
         lock.lock();
         try {
             for (; ; ) {
-                if (!messageIdCatch.containsKey(currentPacketId)) {
-                    messageIdCatch.put(currentPacketId, currentPacketId);
+                if (!messageIdCache.containsKey(currentPacketId)) {
+                    messageIdCache.put(currentPacketId, currentPacketId);
                     return currentPacketId;
                 }
                 currentPacketId++;
@@ -48,6 +48,6 @@ public class MessagePacketIdImpl implements IMessagePacketId {
 
     @Override
     public synchronized void releaseMessageId(int messageId) {
-        messageIdCatch.remove(messageId);
+        messageIdCache.remove(messageId);
     }
 }

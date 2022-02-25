@@ -4,10 +4,12 @@ import github.microgalaxy.mqtt.broker.client.ISessionStore;
 import github.microgalaxy.mqtt.broker.client.ISubscribeStore;
 import github.microgalaxy.mqtt.broker.client.Session;
 import github.microgalaxy.mqtt.broker.client.Subscribe;
+import github.microgalaxy.mqtt.broker.event.IBrokerEvent;
 import github.microgalaxy.mqtt.broker.handler.MqttException;
-import github.microgalaxy.mqtt.broker.internal.IInternalCommunication;
-import github.microgalaxy.mqtt.broker.internal.InternalMessage;
+import github.microgalaxy.mqtt.broker.internal.InternalCommunicationAdapter;
+import github.microgalaxy.mqtt.broker.internal.model.InternalMqttMessage;
 import github.microgalaxy.mqtt.broker.message.*;
+import github.microgalaxy.mqtt.broker.util.MqttEventUtils;
 import github.microgalaxy.mqtt.broker.util.TopicUtils;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -15,12 +17,12 @@ import io.netty.channel.Channel;
 import io.netty.handler.codec.mqtt.*;
 import io.netty.util.AttributeKey;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 /**
  * 发布消息
@@ -30,13 +32,16 @@ import java.util.stream.Collectors;
 @Component
 public class MqttPublish<T extends MqttMessageType, M extends MqttPublishMessage> extends AbstractMqttMsgProtocol<T, M> {
     @Autowired
+    @Lazy
+    private IBrokerEvent brokerEventAdapter;
+    @Autowired
     private ISessionStore sessionStoreServer;
     @Autowired
     private IMessagePacketId messagePacketIdServer;
     @Autowired
     private ISubscribeStore subscribeStoreServer;
     @Autowired
-    private IInternalCommunication internalCommunicationServer;
+    private InternalCommunicationAdapter<Object> internalCommunicationServer;
     @Autowired
     private IDupPublishMessage dupPublishMessageServer;
     @Autowired
@@ -72,17 +77,18 @@ public class MqttPublish<T extends MqttMessageType, M extends MqttPublishMessage
         if (MqttQoS.EXACTLY_ONCE == mqttQoS) {
             sendPubRecMessage(channel, msg.variableHeader().packetId());
         }
+        MqttEventUtils.onMsgArriveEvent(channel, brokerEventAdapter, sessionStoreServer, msg,messageBytes);
 
         Collection<Subscribe> subscribes = getTargetSubscribe(publishMessage.variableHeader().topicName());
         if (!CollectionUtils.isEmpty(subscribes)) {
-            InternalMessage internalMessage = new InternalMessage();
-            internalMessage.setJmqIds(subscribes.stream().map(Subscribe::getJmqId).collect(Collectors.toSet()));
-            internalMessage.setTopic(publishMessage.variableHeader().topicName());
-            internalMessage.setQos(publishMessage.fixedHeader().qosLevel());
-            internalMessage.setPayload(messageBytes);
-            internalMessage.setRetain(false);
-            internalMessage.setDup(false);
-            internalCommunicationServer.sendInternalMessage(internalMessage);
+            InternalMqttMessage internalMqttMessage = new InternalMqttMessage();
+            internalMqttMessage.setSubscribeList(subscribes);
+            internalMqttMessage.setTopic(publishMessage.variableHeader().topicName());
+            internalMqttMessage.setQos(publishMessage.fixedHeader().qosLevel());
+            internalMqttMessage.setPayload(messageBytes);
+            internalMqttMessage.setRetain(false);
+            internalMqttMessage.setDup(false);
+            internalCommunicationServer.sendInternalMessage(internalMqttMessage);
             sendPublishMessage(publishMessage, subscribes);
         }
         if (msg.fixedHeader().isRetain()) {
@@ -171,6 +177,7 @@ public class MqttPublish<T extends MqttMessageType, M extends MqttPublishMessage
                 dupPublishMessageServer.put(s.getClientId(), dupPublishMessage);
             }
             session.getChannel().writeAndFlush(message);
+            MqttEventUtils.onMsgPushEvent(session.getChannel(), brokerEventAdapter, sessionStoreServer, message,messageBytes);
             if (log.isDebugEnabled())
                 log.debug("==> PUBLISH - Publish a message: clientId:{}, topic:{}, qos:{}, messageId:{}",
                         s.getClientId(), s.getTopic(), targetQos.value(), messageId);
@@ -181,6 +188,6 @@ public class MqttPublish<T extends MqttMessageType, M extends MqttPublishMessage
         String clientId = (String) channel.attr(AttributeKey.valueOf("clientId")).get();
         Session session = sessionStoreServer.get(clientId);
         if (ObjectUtils.isEmpty(session) || ObjectUtils.isEmpty(session.getWillMessage())) return;
-        sendPublishMessage(session.getWillMessage(),getTargetSubscribe(session.getWillMessage().variableHeader().topicName()));
+        sendPublishMessage(session.getWillMessage(), getTargetSubscribe(session.getWillMessage().variableHeader().topicName()));
     }
 }

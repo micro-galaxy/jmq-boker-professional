@@ -26,51 +26,212 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9259b00a-c396-421e-acc0-b9d20626910e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ignite/README.txt" afterDir="false" />
+    <list default="true" id="9259b00a-c396-421e-acc0-b9d20626910e" name="Default Changelist" comment="1.Dashboard web: client manager view design   15%">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_12_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_12_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_12_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_4_1_67_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/app/controller/DashboardClientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/app/model/ClientForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/app/model/ClientModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/app/model/PageBaseModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/app/service/BrokerClientServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-000/lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-000/node00-f287dad3-922d-4706-9f2c-65cf254931e3/cp/1640181881071-380117b6-b8c8-4035-a74b-492439d0f9f3-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-000/node00-f287dad3-922d-4706-9f2c-65cf254931e3/cp/1640181881071-380117b6-b8c8-4035-a74b-492439d0f9f3-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-000/node00-f287dad3-922d-4706-9f2c-65cf254931e3/cp/1640182084658-f34dcba5-f82c-45b8-a99d-2cf5a1debe18-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-000/node00-f287dad3-922d-4706-9f2c-65cf254931e3/cp/1640182084658-f34dcba5-f82c-45b8-a99d-2cf5a1debe18-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cache-nodeClusterCache/cache_data.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cache-nodeClusterCache/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cache-nodeClusterCache/part-185.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cache-nodeClusterCache/part-187.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cache-nodeMetaCache/part-190.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cache-nodeMqttPerformanceCache/part-190.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640076259256-a1f18e4a-4a82-47f3-b787-6373343befa9-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181907341-249108b2-a5f7-4e86-a8f7-7b6b1cf357ff-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181907341-249108b2-a5f7-4e86-a8f7-7b6b1cf357ff-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181910675-cfe81072-97b0-491f-b0a7-a14c2df76ac3-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181910675-cfe81072-97b0-491f-b0a7-a14c2df76ac3-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181910800-472fd677-0ff0-46aa-8154-4d54d069a36a-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181910800-472fd677-0ff0-46aa-8154-4d54d069a36a-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181910914-60606886-2e0d-4bc9-a884-64fa0d04dc4e-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181910914-60606886-2e0d-4bc9-a884-64fa0d04dc4e-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181911006-889f6d44-31ef-4058-915c-6cd3dab31d3d-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181911006-889f6d44-31ef-4058-915c-6cd3dab31d3d-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181911096-aeebdbfd-13db-4918-8af2-bfe481076f0d-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181911096-aeebdbfd-13db-4918-8af2-bfe481076f0d-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181911183-f0bfc336-6934-4ae4-bf13-26f18f1fb285-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181911183-f0bfc336-6934-4ae4-bf13-26f18f1fb285-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181911263-e4af91f7-f989-44d9-b04a-332796c143bc-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181911263-e4af91f7-f989-44d9-b04a-332796c143bc-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181911356-fbd1b78d-9599-4bec-a783-f05e092a5006-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181911356-fbd1b78d-9599-4bec-a783-f05e092a5006-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181911443-3749b275-258c-4a22-9f4e-038447e47319-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181911443-3749b275-258c-4a22-9f4e-038447e47319-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181911522-b7fb1732-c9a0-4620-9ee4-de2709204dd8-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640181911522-b7fb1732-c9a0-4620-9ee4-de2709204dd8-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640182087613-21d88180-0de1-46da-a7db-ef7776d4627b-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640182087613-21d88180-0de1-46da-a7db-ef7776d4627b-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640422598082-f05f1575-ddf2-44a4-8e45-cd9ab1b1fee1-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640422598082-f05f1575-ddf2-44a4-8e45-cd9ab1b1fee1-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640422771578-7623af6c-e4ad-45a8-9945-96dff004d03f-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640422771578-7623af6c-e4ad-45a8-9945-96dff004d03f-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640431124645-14b29b72-d9d9-4fa0-a752-5605132aeb4a-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640431124645-14b29b72-d9d9-4fa0-a752-5605132aeb4a-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640431252010-e0b48508-3b59-4fd6-aa69-396af0b70f32-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640431252010-e0b48508-3b59-4fd6-aa69-396af0b70f32-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640431422277-31c029ea-30b6-4e8a-8c3b-51f2ff42261d-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640431422277-31c029ea-30b6-4e8a-8c3b-51f2ff42261d-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640431477629-f493efe8-4d3f-467f-be09-a6e4585579d7-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640431477629-f493efe8-4d3f-467f-be09-a6e4585579d7-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640431513756-4aeb50b5-23f9-4786-a814-cd6330726c04-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640431513756-4aeb50b5-23f9-4786-a814-cd6330726c04-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640431575460-7248b37c-50d0-4ef0-8fbe-a4b322e4a99d-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640431575460-7248b37c-50d0-4ef0-8fbe-a4b322e4a99d-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640432213817-064d86fa-bc7f-4632-9cca-a0f11cd654a3-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640432213817-064d86fa-bc7f-4632-9cca-a0f11cd654a3-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640432343447-520cef91-9679-4498-aaf5-c7efa5e5f9df-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640432343447-520cef91-9679-4498-aaf5-c7efa5e5f9df-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640432655319-f2b47ea2-0c29-4c3f-ba49-1daf52bed64c-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640432655319-f2b47ea2-0c29-4c3f-ba49-1daf52bed64c-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640432869457-590aa655-96d8-4e25-b4cc-58baeea16630-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640432869457-590aa655-96d8-4e25-b4cc-58baeea16630-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640433553468-59ca10b0-5172-424a-bf75-7f62c901742e-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640433553468-59ca10b0-5172-424a-bf75-7f62c901742e-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640686369213-c5c2e235-c07d-4934-839d-034d267e3d43-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640686369213-c5c2e235-c07d-4934-839d-034d267e3d43-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640686514904-745f5d3f-b7f9-4d18-968d-f287dae803fb-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640686514904-745f5d3f-b7f9-4d18-968d-f287dae803fb-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640772439197-0660f023-360f-4b80-b7bc-8407a91610d2-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640772439197-0660f023-360f-4b80-b7bc-8407a91610d2-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640772599597-931b5f13-f77f-4c41-839b-2274008ce3c7-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640772599597-931b5f13-f77f-4c41-839b-2274008ce3c7-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640859280481-c482e41b-77ae-4398-898d-211eaf45c11e-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640859280481-c482e41b-77ae-4398-898d-211eaf45c11e-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640859489533-9f269430-253f-4ab8-a296-627c4ec1ad8e-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640859489533-9f269430-253f-4ab8-a296-627c4ec1ad8e-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640956279689-58c975db-1fc0-435e-a237-6b9fc742cbd8-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640956279689-58c975db-1fc0-435e-a237-6b9fc742cbd8-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640956481182-f0a01571-08f1-45c4-8f80-71f256c32a2f-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640956481182-f0a01571-08f1-45c4-8f80-71f256c32a2f-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640970438393-ca907c0e-51ae-4072-8081-aada98fecf1f-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640970438393-ca907c0e-51ae-4072-8081-aada98fecf1f-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640970652964-70d0dff7-8585-4e7b-ae46-ffd110fb0578-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1640970652964-70d0dff7-8585-4e7b-ae46-ffd110fb0578-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1641052791507-238e2174-7814-43a9-8676-86192e7f3664-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1641052791507-238e2174-7814-43a9-8676-86192e7f3664-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1641052998813-b47a15fe-d0d1-4373-9f14-f72c263a8149-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1641052998813-b47a15fe-d0d1-4373-9f14-f72c263a8149-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1641096407215-be306031-e3c0-40bc-a314-0d9f8b3506d3-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1641096407215-be306031-e3c0-40bc-a314-0d9f8b3506d3-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1641096551625-a9ae82ec-bc4a-4f29-9422-a33df3a6bb68-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-001/node00-c1316be0-d855-43cb-b6d2-b92839bec860/cp/1641096551625-a9ae82ec-bc4a-4f29-9422-a33df3a6bb68-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cache-nodeClusterCache/cache_data.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cache-nodeClusterCache/index.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cache-nodeClusterCache/part-185.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cache-nodeClusterCache/part-187.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433390474-37cf59ff-6a4d-4757-bf6b-71a0bb91b564-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433390474-37cf59ff-6a4d-4757-bf6b-71a0bb91b564-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433393755-78371f23-6989-4ce1-ac11-6854c71ccab6-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433393755-78371f23-6989-4ce1-ac11-6854c71ccab6-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433393870-fd854537-f3a1-44b6-9af9-49075c1a2b43-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433393870-fd854537-f3a1-44b6-9af9-49075c1a2b43-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433393954-b48b057d-4fc1-47b0-bbc7-ee14bb0abc84-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433393954-b48b057d-4fc1-47b0-bbc7-ee14bb0abc84-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394051-1d11346e-6376-4107-99f2-3acafe0052b4-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394051-1d11346e-6376-4107-99f2-3acafe0052b4-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394134-40b09f1a-525e-418b-8c77-a2fd54b26672-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394134-40b09f1a-525e-418b-8c77-a2fd54b26672-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394209-c9a92a1f-0cd6-4ec1-85ad-eba393348be4-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394209-c9a92a1f-0cd6-4ec1-85ad-eba393348be4-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394296-dad28a36-6b51-4e7d-bf82-4e9bd54d4244-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394296-dad28a36-6b51-4e7d-bf82-4e9bd54d4244-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394371-c8a0db14-cebb-487a-8eb4-214916679587-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394371-c8a0db14-cebb-487a-8eb4-214916679587-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394778-2b97f546-9a9e-407d-a180-20733bd41807-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394778-2b97f546-9a9e-407d-a180-20733bd41807-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394850-b571c164-dc5e-4794-a73e-c89d8000c7ab-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394850-b571c164-dc5e-4794-a73e-c89d8000c7ab-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394922-cb1fb79b-d6de-4b36-a9ea-1ff34abed844-END.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433394922-cb1fb79b-d6de-4b36-a9ea-1ff34abed844-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/persistence/jmq-broker-003/node00-c543ad0b-6393-453e-90dd-76a094573589/cp/1640433493272-4ab3e780-6011-440b-b306-ac690431b4ce-START.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/work/db/marshaller/-1740207656.classname0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/work/db/marshaller/-2079752774.classname0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/work/db/marshaller/1001300329.classname0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/work/db/marshaller/1272743466.classname0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/work/db/marshaller/1298173662.classname0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/work/db/marshaller/1425120931.classname0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jmqConf/work/db/marshaller/1572594210.classname0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/jmq-broker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jmq-broker.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_200.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_197.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_59_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_59_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_65_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_mqtt_4_1_65_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_mqtt_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_59_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_65_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_59_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_59_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_65_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_67_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ignite_ignite_core_2_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ignite_ignite_slf4j_2_11_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ignite_ignite_indexing_2_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ignite_ignite_indexing_2_11_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ignite_ignite_slf4j_2_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ignite_ignite_core_2_11_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/common/common.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/common-1.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/common-1.5.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/github/microgalaxy/mqtt/broker/auth/LoginAuth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/github/microgalaxy/mqtt/broker/auth/LoginAuthInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/github/microgalaxy/mqtt/broker/auth/PubSubAuthInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/github/microgalaxy/mqtt/broker/client/ISubscribeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/github/microgalaxy/mqtt/broker/client/ISubscribeStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/github/microgalaxy/mqtt/broker/client/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/github/microgalaxy/mqtt/broker/client/Session.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/github/microgalaxy/mqtt/broker/event/IMqttBrokerEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/github/microgalaxy/mqtt/broker/internal/IInternalCommunication.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/github/microgalaxy/mqtt/broker/internal/IInternalCommunication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/github/microgalaxy/mqtt/broker/internal/InternalMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/common-1.5.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/common/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/core/core.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/client/SubscribeStoreImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/client/SubscribeStoreImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/config/BrokerProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/config/BrokerProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/internal/InternalCommunication.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/internal/InternalCommunication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/message/DupPubRelMessageImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/message/DupPubRelMessageImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/message/DupPublishMessageImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/message/DupPublishMessageImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/message/DupRetainMessageImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/message/DupRetainMessageImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/message/MessagePacketIdImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/message/MessagePacketIdImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/protocol/MqttPublish.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/protocol/MqttPublish.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/client/SessionStoreImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/client/SessionStoreImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/client/SubscribeStoreImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/client/SubscribeStoreImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/config/BrokerConstant$ShareSubscribe.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/config/BrokerConstant$ShareSubscribe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/config/BrokerConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/config/BrokerConstant.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/config/BrokerProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/config/BrokerProperties.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/config/IgniteAutoConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/config/IgniteAutoConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/internal/InternalCommunication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/message/DupPubRelMessageImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/message/DupPubRelMessageImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/message/DupPublishMessageImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/message/DupPublishMessageImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/message/DupRetainMessageImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/message/DupRetainMessageImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/message/MessagePacketIdImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/message/MessagePacketIdImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/protocol/MqttConnect.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/protocol/MqttConnect.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/protocol/MqttDisConnect.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/protocol/MqttDisConnect.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/protocol/MqttPubAck.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/protocol/MqttPubAck.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/protocol/MqttPubComp.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/protocol/MqttPubComp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/protocol/MqttPublish.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/protocol/MqttPublish.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/protocol/MqttSubscribe.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/protocol/MqttSubscribe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/core-1.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/core-1.5.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/protocol/MqttUnSubscribe.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/protocol/MqttUnSubscribe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/server/BrokerServer$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/server/BrokerServer$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/server/BrokerServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/util/TopicUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/github/microgalaxy/mqtt/broker/util/TopicUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/core-1.5.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/dashboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/dashboard.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/target/dashboard-1.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/target/dashboard-1.5.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-web/src/components/views/ClientManager.vue" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-web/src/components/views/ClientManager.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/app/model/ClusterDetailMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/app/model/ClusterDetailModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/app/model/RealTimeOverviewMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/app/model/RealTimeOverviewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/app/service/BrokerClusterServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/app/service/BrokerClusterServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/app/service/BrokerOverviewServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/app/service/BrokerOverviewServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/data/MonitorDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/data/MonitorDataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/target/dashboard-1.5.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin/plugin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin/target/classes/github/microgalaxy/mqtt/broker/auth/LoginAuthServer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/plugin/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/plugin/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/plugin/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugin/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/plugin/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/target/plugin-1.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/plugin/target/plugin-1.5.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/starter/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/starter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/starter/starter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/starter/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/starter/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/starter/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/target/starter-1.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/starter/target/starter-1.5.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/target/starter-1.5.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/starter/target/starter-1.5.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin/target/plugin-1.5.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,13 +241,22 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
         <option value="Interface" />
+        <option value="Enum" />
+        <option value="Vue Single File Component" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
@@ -110,38 +280,74 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/client" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/dashboard/src/main/java/github/microgalaxy/mqtt/broker/internal" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dashboard-web/src/components/views" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.37816092" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="ts.external.directory.path" value="D:\develop\soft\IntelliJ IDEA 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/boot-server/pom.xml" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="github.microgalaxy.mqtt.broker.client" />
-      <recent name="github.microgalaxy.mqtt.broker.massage" />
+      <recent name="github.microgalaxy.mqtt.broker.user" />
       <recent name="github.microgalaxy.mqtt.broker.internal" />
-      <recent name="github.microgalaxy.mqtt.broker.auth" />
+      <recent name="github.microgalaxy.mqtt.broker.server.http.dispatcher" />
+      <recent name="github.microgalaxy.mqtt.broker.client" />
+      <recent name="github.microgalaxy.mqtt.broker.event" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\develop\workspace\github\jmq-broker\starter\src\main\resources" />
-      <recent name="D:\develop\workspace\github\jmq-broker\boot-server\src\main\resources" />
-      <recent name="D:\develop\workspace\github\jmq-broker\boot-server\src" />
-      <recent name="D:\develop\workspace\github\jmq-broker\plugin\src\main\java" />
+      <recent name="D:\develop\workspace\github\jmq-boker-professional\dashboard-web\src\components\views" />
+      <recent name="D:\develop\workspace\github\jmq-boker-professional\dashboard-web\src\assets\img" />
+      <recent name="D:\develop\workspace\github\jmq-boker-professional\dashboard-web\src\assets\publicCss" />
+      <recent name="D:\develop\workspace\github\jmq-boker-professional\dashboard-web\src\utils" />
+      <recent name="D:\develop\workspace\github\jmq-boker-professional\dashboard-web\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="github.microgalaxy.mqtt.broker.app.model" />
+      <recent name="github.microgalaxy.mqtt.broker.app.service" />
+      <recent name="github.microgalaxy.mqtt.broker.app.controller" />
       <recent name="github.microgalaxy.mqtt.broker.util" />
-      <recent name="github.microgalaxy.mqtt.broker.internal" />
+      <recent name="github.microgalaxy.mqtt.broker.event.model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\develop\workspace\github\jmq-boker-professional\dashboard-web\src\components\views" />
+      <recent name="D:\develop\workspace\github\jmq-boker-professional\dashboard-web\src\element-ui" />
+      <recent name="D:\develop\workspace\github\jmq-boker-professional\dashboard-web\src\assets" />
+      <recent name="D:\develop\workspace\github\jmq-boker-professional\dashboard-web\public\img" />
       <recent name="D:\develop\workspace\github\jmq-broker\boot-server" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="JmqBrokerServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+  <component name="RunManager" selected="Spring Boot.JmqBrokerServerApplication">
+    <configuration name="a" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="github.microgalaxy.mqtt.broker.data.model.a" />
+      <module name="dashboard" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="github.microgalaxy.mqtt.broker.data.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jmq-remote" type="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="1223" />
+      <option name="AUTO_RESTART" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="1223" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="JmqBrokerServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false">
       <module name="starter" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="github.microgalaxy.mqtt.broker.JmqBrokerServerApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -163,8 +369,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.a" />
+      <item itemvalue="Remote.jmq-remote" />
+      <item itemvalue="Spring Boot.JmqBrokerServerApplication" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.a" />
         <item itemvalue="Spring Boot.JmqBrokerServerApplication" />
       </list>
     </recent_temporary>
@@ -215,191 +427,539 @@
       <workItem from="1628139579803" duration="1409000" />
       <workItem from="1628141848729" duration="12667000" />
       <workItem from="1628213320968" duration="20322000" />
+      <workItem from="1628759033116" duration="1382000" />
+      <workItem from="1628824116913" duration="19296000" />
+      <workItem from="1629080002511" duration="21003000" />
+      <workItem from="1629179124225" duration="7658000" />
+      <workItem from="1629189666666" duration="22000" />
+      <workItem from="1629191564809" duration="1032000" />
+      <workItem from="1629193717026" duration="585000" />
+      <workItem from="1629336392136" duration="5364000" />
+      <workItem from="1629350952917" duration="16840000" />
+      <workItem from="1629427652568" duration="14791000" />
+      <workItem from="1629681641187" duration="22184000" />
+      <workItem from="1629768250368" duration="15210000" />
+      <workItem from="1629874443855" duration="8737000" />
+      <workItem from="1629941436575" duration="20322000" />
+      <workItem from="1630030409150" duration="18832000" />
+      <workItem from="1630290120775" duration="13888000" />
+      <workItem from="1630372522412" duration="11273000" />
+      <workItem from="1630464043738" duration="10851000" />
+      <workItem from="1630485601891" duration="4029000" />
+      <workItem from="1630567084877" duration="4559000" />
+      <workItem from="1630634138604" duration="21835000" />
+      <workItem from="1630905349077" duration="6636000" />
+      <workItem from="1630918965291" duration="113000" />
+      <workItem from="1630922328233" duration="78000" />
+      <workItem from="1630983949329" duration="285000" />
+      <workItem from="1630991701617" duration="11992000" />
+      <workItem from="1631009105937" duration="12000" />
+      <workItem from="1631077888697" duration="7933000" />
+      <workItem from="1631166449142" duration="15068000" />
+      <workItem from="1631249013104" duration="12223000" />
+      <workItem from="1631509054600" duration="3000" />
+      <workItem from="1631587638245" duration="5655000" />
+      <workItem from="1631601609716" duration="7978000" />
+      <workItem from="1631610844050" duration="233000" />
+      <workItem from="1631611247649" duration="10000" />
+      <workItem from="1631698832738" duration="1307000" />
+      <workItem from="1631755367629" duration="21760000" />
+      <workItem from="1631786155406" duration="35000" />
+      <workItem from="1631786224807" duration="279000" />
+      <workItem from="1631842361777" duration="12779000" />
+      <workItem from="1631928759251" duration="3657000" />
+      <workItem from="1631935233349" duration="13059000" />
+      <workItem from="1631956683349" duration="48000" />
+      <workItem from="1632290797941" duration="8303000" />
+      <workItem from="1632376080610" duration="7743000" />
+      <workItem from="1632390878015" duration="573000" />
+      <workItem from="1632463181141" duration="2312000" />
+      <workItem from="1632466257064" duration="2716000" />
+      <workItem from="1632469092554" duration="1589000" />
+      <workItem from="1632471489932" duration="3207000" />
+      <workItem from="1632477134719" duration="412000" />
+      <workItem from="1632618715526" duration="947000" />
+      <workItem from="1632622563909" duration="10369000" />
+      <workItem from="1632650439435" duration="116000" />
+      <workItem from="1632791316444" duration="16000" />
+      <workItem from="1632791384460" duration="3087000" />
+      <workItem from="1632804899984" duration="9957000" />
+      <workItem from="1632821426981" duration="561000" />
+      <workItem from="1632892488984" duration="5412000" />
+      <workItem from="1632965874716" duration="15579000" />
+      <workItem from="1632991247798" duration="4657000" />
+      <workItem from="1633662009376" duration="746000" />
+      <workItem from="1633670637977" duration="439000" />
+      <workItem from="1633679463722" duration="74000" />
+      <workItem from="1633921052724" duration="921000" />
+      <workItem from="1634179392292" duration="55000" />
+      <workItem from="1635932693297" duration="1544000" />
+      <workItem from="1635989359974" duration="17079000" />
+      <workItem from="1636097346930" duration="9832000" />
+      <workItem from="1636348816582" duration="2894000" />
+      <workItem from="1636352030731" duration="12008000" />
+      <workItem from="1636534749052" duration="2328000" />
+      <workItem from="1636593041266" duration="1551000" />
+      <workItem from="1636686940725" duration="7509000" />
+      <workItem from="1636939409688" duration="16126000" />
+      <workItem from="1637029400861" duration="15891000" />
+      <workItem from="1637118924725" duration="14450000" />
+      <workItem from="1637221295718" duration="6438000" />
+      <workItem from="1637288834618" duration="1427000" />
+      <workItem from="1637290441740" duration="11520000" />
+      <workItem from="1637309960539" duration="4763000" />
+      <workItem from="1637316009784" duration="194000" />
+      <workItem from="1637556150783" duration="6512000" />
+      <workItem from="1637654232415" duration="7314000" />
+      <workItem from="1637803570171" duration="21591000" />
+      <workItem from="1637889559567" duration="1149000" />
+      <workItem from="1637893298318" duration="8186000" />
+      <workItem from="1637909231700" duration="8821000" />
+      <workItem from="1637921320748" duration="629000" />
+      <workItem from="1637922385104" duration="86000" />
+      <workItem from="1638165821774" duration="1796000" />
+      <workItem from="1638169222481" duration="1729000" />
+      <workItem from="1638237543348" duration="16868000" />
+      <workItem from="1638265430924" duration="1008000" />
+      <workItem from="1638323902608" duration="22434000" />
+      <workItem from="1638841544754" duration="17124000" />
+      <workItem from="1638865052389" duration="7063000" />
+      <workItem from="1639100754602" duration="752000" />
+      <workItem from="1639105959072" duration="2569000" />
+      <workItem from="1639116103752" duration="13007000" />
+      <workItem from="1639358912800" duration="289000" />
+      <workItem from="1639378801699" duration="2416000" />
+      <workItem from="1639386259351" duration="3424000" />
+      <workItem from="1639447043209" duration="1425000" />
+      <workItem from="1639450898209" duration="10977000" />
+      <workItem from="1639466564086" duration="974000" />
+      <workItem from="1639467849902" duration="1952000" />
+      <workItem from="1639473086300" duration="726000" />
+      <workItem from="1639475391323" duration="16000" />
+      <workItem from="1639543702092" duration="2506000" />
+      <workItem from="1639547967403" duration="12401000" />
+      <workItem from="1639621362827" duration="16147000" />
+      <workItem from="1639708968496" duration="19782000" />
+      <workItem from="1639969523144" duration="16591000" />
+      <workItem from="1639989722118" duration="2485000" />
+      <workItem from="1639992487889" duration="1833000" />
+      <workItem from="1640048863699" duration="12104000" />
+      <workItem from="1640066403434" duration="2042000" />
+      <workItem from="1640069146821" duration="4914000" />
+      <workItem from="1640075670352" duration="2914000" />
+      <workItem from="1640080717558" duration="63000" />
+      <workItem from="1640080799266" duration="59000" />
+      <workItem from="1640080877819" duration="11000" />
+      <workItem from="1640138710596" duration="318000" />
+      <workItem from="1640181549583" duration="2851000" />
+      <workItem from="1640223111487" duration="92000" />
+      <workItem from="1640255627026" duration="2215000" />
+      <workItem from="1640313995133" duration="629000" />
+      <workItem from="1640328523303" duration="261000" />
+      <workItem from="1640332222238" duration="345000" />
+      <workItem from="1640332615026" duration="201000" />
+      <workItem from="1640333425345" duration="908000" />
+      <workItem from="1640422463328" duration="6857000" />
+      <workItem from="1640435502492" duration="523000" />
+      <workItem from="1640524340215" duration="261000" />
+      <workItem from="1640573006163" duration="1342000" />
+      <workItem from="1640686330794" duration="9285000" />
+      <workItem from="1640764611930" duration="11960000" />
+      <workItem from="1640841683958" duration="46000" />
+      <workItem from="1640859103806" duration="3885000" />
+      <workItem from="1640918734217" duration="1978000" />
+      <workItem from="1640949473700" duration="8182000" />
+      <workItem from="1640969532810" duration="2317000" />
+      <workItem from="1641052632087" duration="6509000" />
+      <workItem from="1641096364091" duration="7947000" />
     </task>
-    <task id="LOCAL-00001" summary="mqtt connect protocol implement">
-      <created>1625639122484</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
+    <task id="LOCAL-00078" summary="1.http server support CORS">
+      <created>1636360483626</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
       <option name="project" value="LOCAL" />
-      <updated>1625639122484</updated>
+      <updated>1636360483627</updated>
     </task>
-    <task id="LOCAL-00002" summary="mqtt connect protocol implement">
-      <created>1625649546749</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
+    <task id="LOCAL-00079" summary="1.web login api coding">
+      <created>1636364497089</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
       <option name="project" value="LOCAL" />
-      <updated>1625649546749</updated>
+      <updated>1636364497089</updated>
     </task>
-    <task id="LOCAL-00003" summary="mqtt connect protocol implement">
-      <created>1625731571047</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
+    <task id="LOCAL-00080" summary="1.http server support CORS">
+      <created>1636535810560</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
       <option name="project" value="LOCAL" />
-      <updated>1625731571047</updated>
+      <updated>1636535810561</updated>
     </task>
-    <task id="LOCAL-00004" summary="mqtt v5 adapter">
-      <created>1626256786123</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
+    <task id="LOCAL-00081" summary="1.Jmq dashboard login process 100%">
+      <created>1636708501354</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
       <option name="project" value="LOCAL" />
-      <updated>1626256786123</updated>
+      <updated>1636708501355</updated>
     </task>
-    <task id="LOCAL-00005" summary="mqtt v5 adapter">
-      <created>1626333090802</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
+    <task id="LOCAL-00082" summary="1.Dashboard LeftBar design">
+      <created>1636967912917</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
       <option name="project" value="LOCAL" />
-      <updated>1626333090802</updated>
+      <updated>1636967912918</updated>
     </task>
-    <task id="LOCAL-00006" summary="mqtt v5 adapter">
-      <created>1626343733215</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
+    <task id="LOCAL-00083" summary="1.Dashboard index page design">
+      <created>1637053600279</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
       <option name="project" value="LOCAL" />
-      <updated>1626343733215</updated>
+      <updated>1637053600280</updated>
     </task>
-    <task id="LOCAL-00007" summary="mqtt v5 adapter">
-      <created>1626415290955</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
+    <task id="LOCAL-00084" summary="1.Dashboard index page design: add github url">
+      <created>1637055025914</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
       <option name="project" value="LOCAL" />
-      <updated>1626415290955</updated>
+      <updated>1637055025914</updated>
     </task>
-    <task id="LOCAL-00008" summary="mqtt v5 adapter">
-      <created>1626416328283</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
+    <task id="LOCAL-00085" summary="1.github icon">
+      <created>1637055554918</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
       <option name="project" value="LOCAL" />
-      <updated>1626416328283</updated>
+      <updated>1637055554918</updated>
     </task>
-    <task id="LOCAL-00009" summary="mqtt v5 adapter">
-      <created>1626417660271</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
+    <task id="LOCAL-00086" summary="1.user rePassword api&#10;2.cors">
+      <created>1637143716405</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
       <option name="project" value="LOCAL" />
-      <updated>1626417660271</updated>
+      <updated>1637143716406</updated>
     </task>
-    <task id="LOCAL-00010" summary="mqtt message protocol handler implement">
-      <created>1626596079826</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
+    <task id="LOCAL-00087" summary="1.fix: ignite cant persistence">
+      <created>1637225952557</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
       <option name="project" value="LOCAL" />
-      <updated>1626596079826</updated>
+      <updated>1637225952558</updated>
     </task>
-    <task id="LOCAL-00011" summary="pom file configuration">
-      <created>1626686678620</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
+    <task id="LOCAL-00088" summary="1.Jmq Dashboard web RealTimeOverview.vue  1%">
+      <created>1637228101142</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
       <option name="project" value="LOCAL" />
-      <updated>1626686678620</updated>
+      <updated>1637228101142</updated>
     </task>
-    <task id="LOCAL-00012" summary="pom file configuration">
-      <created>1626948220382</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
+    <task id="LOCAL-00089" summary="1.Set ACCESS_CONTROL_MAX_AGE 3600">
+      <created>1637289929554</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
       <option name="project" value="LOCAL" />
-      <updated>1626948220382</updated>
+      <updated>1637289929555</updated>
     </task>
-    <task id="LOCAL-00013" summary="1.jqm-broker starter configuration&#10;2.test connect、subscribe、publish">
-      <created>1627034875485</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
+    <task id="LOCAL-00090" summary="1.Cluster security  1%">
+      <created>1637309767592</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
       <option name="project" value="LOCAL" />
-      <updated>1627034875485</updated>
+      <updated>1637309767592</updated>
     </task>
-    <task id="LOCAL-00014" summary="1.check message packetId range">
-      <created>1627269067165</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
+    <task id="LOCAL-00091" summary="1.Ignite cache file persistence at cluster">
+      <created>1637572994668</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
       <option name="project" value="LOCAL" />
-      <updated>1627269067165</updated>
+      <updated>1637572994669</updated>
     </task>
-    <task id="LOCAL-00015" summary="1.support for global exception handler">
-      <created>1627292426540</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
+    <task id="LOCAL-00092" summary="1.Coding broker cluster security plugin  80%">
+      <created>1637661919811</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
       <option name="project" value="LOCAL" />
-      <updated>1627292426540</updated>
+      <updated>1637661919812</updated>
     </task>
-    <task id="LOCAL-00016" summary="1.Optimise ack packet reply timing">
-      <created>1627357020221</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
+    <task id="LOCAL-00093" summary="1.Broker cluster safe  50%">
+      <created>1637834884088</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
       <option name="project" value="LOCAL" />
-      <updated>1627357020221</updated>
+      <updated>1637834884089</updated>
     </task>
-    <task id="LOCAL-00017" summary="1.use cas get to message packet id">
-      <created>1627374304583</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
+    <task id="LOCAL-00094" summary="1.Coding broker security plugin">
+      <created>1637908278346</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
       <option name="project" value="LOCAL" />
-      <updated>1627374304583</updated>
+      <updated>1637908278347</updated>
     </task>
-    <task id="LOCAL-00018" summary="1.close the chanel when there is a error in message handler">
-      <created>1627379294526</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
+    <task id="LOCAL-00095" summary="1.Http API security: Http server support interceptor">
+      <created>1637921192494</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
       <option name="project" value="LOCAL" />
-      <updated>1627379294526</updated>
+      <updated>1637921192494</updated>
     </task>
-    <task id="LOCAL-00019" summary="1.support share subscribe  60%">
-      <created>1627466683736</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
+    <task id="LOCAL-00096" summary="1.nothing">
+      <created>1637921930449</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
       <option name="project" value="LOCAL" />
-      <updated>1627466683736</updated>
+      <updated>1637921930449</updated>
     </task>
-    <task id="LOCAL-00020" summary="1.support share subscribe  61%">
-      <created>1627546812900</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
+    <task id="LOCAL-00097" summary="1.nothing">
+      <created>1638167582164</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
       <option name="project" value="LOCAL" />
-      <updated>1627546812900</updated>
+      <updated>1638167582165</updated>
     </task>
-    <task id="LOCAL-00021" summary="1.support share subscribe  90%">
-      <created>1627970615624</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
+    <task id="LOCAL-00098" summary="1.nothing">
+      <created>1638169907317</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
       <option name="project" value="LOCAL" />
-      <updated>1627970615624</updated>
+      <updated>1638169907317</updated>
     </task>
-    <task id="LOCAL-00022" summary="1.fix share topic rule">
-      <created>1627972879362</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
+    <task id="LOCAL-00099" summary="1.nothing">
+      <created>1638249776044</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
       <option name="project" value="LOCAL" />
-      <updated>1627972879362</updated>
+      <updated>1638249776044</updated>
     </task>
-    <task id="LOCAL-00023" summary="1.change random rule">
-      <created>1627975652254</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
+    <task id="LOCAL-00100" summary="1.Dashboard web: designing real-time overview pages   5%">
+      <created>1638264444756</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
       <option name="project" value="LOCAL" />
-      <updated>1627975652254</updated>
+      <updated>1638264444756</updated>
     </task>
-    <task id="LOCAL-00024" summary="1.close client of heartbeat timeout">
-      <created>1628071486309</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
+    <task id="LOCAL-00101" summary="1.Jmq cluster: Stop node with duplicate broker id">
+      <created>1638328122917</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
       <option name="project" value="LOCAL" />
-      <updated>1628071486310</updated>
+      <updated>1638328122918</updated>
     </task>
-    <task id="LOCAL-00025" summary="1.import apache ignite">
-      <created>1628141084193</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
+    <task id="LOCAL-00102" summary="1.Jmq cluster: stop node with brokerId duplicate">
+      <created>1638336698733</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
       <option name="project" value="LOCAL" />
-      <updated>1628141084193</updated>
+      <updated>1638336698733</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00103" summary="1.Dashboard web: real-time overview design   15%">
+      <created>1638346316848</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1638346316848</updated>
+    </task>
+    <task id="LOCAL-00104" summary="1.Dashboard web: real-time overview design   15%">
+      <created>1638347936288</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1638347936288</updated>
+    </task>
+    <task id="LOCAL-00105" summary="1.Dashboard web: real-time overview design   16%">
+      <created>1638352597243</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1638352597243</updated>
+    </task>
+    <task id="LOCAL-00106" summary="1.Dashboard web: real-time overview design   60%">
+      <created>1638862970016</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1638862970017</updated>
+    </task>
+    <task id="LOCAL-00107" summary="1.Dashboard web: real-time overview design   70%">
+      <created>1638872096212</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1638872096212</updated>
+    </task>
+    <task id="LOCAL-00108" summary="1.Dashboard web: real-time overview design   65%">
+      <created>1639130571558</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1639130571559</updated>
+    </task>
+    <task id="LOCAL-00109" summary="1.Dashboard web: real-time overview design   85%">
+      <created>1639389820729</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1639389820730</updated>
+    </task>
+    <task id="LOCAL-00110" summary="1.Dashboard web: real-time overview design   86%">
+      <created>1639469749497</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1639469749498</updated>
+    </task>
+    <task id="LOCAL-00111" summary="1.Dashboard web: real-time overview design   88%&#10;1.1 Fix concurrency issues with number of subscriptions, number of device connections">
+      <created>1639549125993</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1639549125993</updated>
+    </task>
+    <task id="LOCAL-00112" summary="1.Dashboard web: real-time overview design   90%">
+      <created>1639550867503</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1639550867503</updated>
+    </task>
+    <task id="LOCAL-00113" summary="1.Dashboard web: real-time overview design   90%">
+      <created>1639553086352</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1639553086352</updated>
+    </task>
+    <task id="LOCAL-00114" summary="1.fix: Client disconnect event invalid when the session is null">
+      <created>1639560581743</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1639560581743</updated>
+    </task>
+    <task id="LOCAL-00115" summary="1.fix:FIX node not cluster&#10;2.fix:Fix resource files being re-encoded during maven packaging">
+      <created>1639637042757</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1639637042758</updated>
+    </task>
+    <task id="LOCAL-00116" summary="1.FIX: Fix node not working on restart">
+      <created>1639641315355</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1639641315355</updated>
+    </task>
+    <task id="LOCAL-00117" summary="1.Dashboard web: real-time overview design  95%">
+      <created>1639720758754</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1639720758755</updated>
+    </task>
+    <task id="LOCAL-00118" summary="1.Dashboard web: cluster info view design   20%">
+      <created>1639735383873</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1639735383873</updated>
+    </task>
+    <task id="LOCAL-00119" summary="1.Dashboard web: node cluster view design   30%">
+      <created>1639979526549</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1639979526549</updated>
+    </task>
+    <task id="LOCAL-00120" summary="1.Dashboard web: node cluster view design  35%">
+      <created>1639989552365</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1639989552365</updated>
+    </task>
+    <task id="LOCAL-00121" summary="1.FIX: Fix node unavailable on cluster node reboot">
+      <created>1640073366118</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1640073366118</updated>
+    </task>
+    <task id="LOCAL-00122" summary="1.Dashboard web: node cluster view design   60%">
+      <created>1640184363365</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1640184363366</updated>
+    </task>
+    <task id="LOCAL-00123" summary="1.Dashboard web: node cluster view design   50%">
+      <created>1640433700108</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1640433700108</updated>
+    </task>
+    <task id="LOCAL-00124" summary="1.Dashboard web: client view design   5%">
+      <created>1640698846505</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1640698846506</updated>
+    </task>
+    <task id="LOCAL-00125" summary="1.Dashboard web: client manager view design   15%">
+      <created>1640971810392</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1640971810392</updated>
+    </task>
+    <task id="LOCAL-00126" summary="1.Dashboard web: client manager view design   16%">
+      <created>1641059095948</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1641059095949</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:D:/develop/workspace/github/jmq-boker-professional/dashboard-web/src/components" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -414,203 +974,207 @@
                   </entry>
                 </map>
               </option>
+              <option name="COLUMN_WIDTH">
+                <map>
+                  <entry key="3" value="104" />
+                </map>
+              </option>
             </State>
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="mqtt connect protocol implement" />
-    <MESSAGE value="mqtt v5 adapter" />
-    <MESSAGE value="mqtt message protocol handler implement" />
-    <MESSAGE value="pom file configuration" />
-    <MESSAGE value="1.jqm-broker starter configuration&#10;2.test connect、subscribe、publish" />
-    <MESSAGE value="1.check message packetId range" />
-    <MESSAGE value="1.support for global exception handler" />
-    <MESSAGE value="1.Optimise ack packet reply timing" />
-    <MESSAGE value="1.use cas get to message packet id" />
-    <MESSAGE value="1.close the chanel when there is a error in message handler" />
-    <MESSAGE value="1.support share subscribe  60%" />
-    <MESSAGE value="1.support share subscribe  61%" />
-    <MESSAGE value="1.support share subscribe  90%" />
-    <MESSAGE value="1.fix share topic rule" />
-    <MESSAGE value="1.change random rule" />
-    <MESSAGE value="1.close client of heartbeat timeout" />
-    <MESSAGE value="1.import apache ignite" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.import apache ignite" />
+    <MESSAGE value="1.Dashboard web: designing real-time overview pages   5%" />
+    <MESSAGE value="1.Jmq cluster: Stop node with duplicate broker id" />
+    <MESSAGE value="1.Jmq cluster: stop node with brokerId duplicate" />
+    <MESSAGE value="1.Dashboard web: real-time overview design   15%" />
+    <MESSAGE value="1.Dashboard web: real-time overview design   16%" />
+    <MESSAGE value="1.Dashboard web: real-time overview design   60%" />
+    <MESSAGE value="1.Dashboard web: real-time overview design   70%" />
+    <MESSAGE value="1.Dashboard web: real-time overview design   65%" />
+    <MESSAGE value="1.Dashboard web: real-time overview design   85%" />
+    <MESSAGE value="1.Dashboard web: real-time overview design   86%" />
+    <MESSAGE value="1.Dashboard web: real-time overview design   88%&#10;1.1 Fix concurrency issues with number of subscriptions, number of device connections" />
+    <MESSAGE value="1.Dashboard web: real-time overview design   90%" />
+    <MESSAGE value="1.fix: Client disconnect event invalid when the session is null" />
+    <MESSAGE value="1.fix:FIX node not cluster&#10;2.fix:Fix resource files being re-encoded during maven packaging" />
+    <MESSAGE value="1.FIX: Fix node not working on restart" />
+    <MESSAGE value="1.Dashboard web: real-time overview design  95%" />
+    <MESSAGE value="1.Dashboard web: cluster info view design   20%" />
+    <MESSAGE value="1.Dashboard web: node cluster view design   30%" />
+    <MESSAGE value="1.Dashboard web: node cluster view design  35%" />
+    <MESSAGE value="1.FIX: Fix node unavailable on cluster node reboot" />
+    <MESSAGE value="1.Dashboard web: node cluster view design   60%" />
+    <MESSAGE value="1.Dashboard web: node cluster view design   50%" />
+    <MESSAGE value="1.Dashboard web: client view design   5%" />
+    <MESSAGE value="1.Dashboard web: client manager view design   15%" />
+    <MESSAGE value="1.Dashboard web: client manager view design   16%" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.Dashboard web: client manager view design   16%" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="590" y="113" key="#JmqBrokerServerApplication" timestamp="1626945859442">
+    <state x="440" y="94" key="#Project_Structure" timestamp="1632466184475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="590" y="113" key="#JmqBrokerServerApplication/0.0.1920.1040@0.0.1920.1040" timestamp="1626945859442" />
-    <state x="440" y="94" key="#Project_Structure" timestamp="1627028021790">
+    <state x="440" y="94" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1632466184475" />
+    <state x="701" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1637224585004">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1627028021790" />
-    <state x="690" y="274" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1626421350506">
+    <state x="701" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1637224585004" />
+    <state x="765" y="225" key="#com.intellij.ide.util.MemberChooser" timestamp="1640072013802">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626421350506" />
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1627028604288">
+    <state x="765" y="225" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1640072013802" />
+    <state x="690" y="295" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1636105154847">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1627028604288" />
-    <state x="765" y="225" key="#com.intellij.ide.util.MemberChooser" timestamp="1628149180303">
+    <state x="690" y="295" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1636105154847" />
+    <state x="578" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1637893454900">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="225" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1628149180303" />
-    <state x="690" y="295" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1627003328769">
+    <state x="578" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1637893454900" />
+    <state x="661" y="482" width="839" height="558" key="#xdebugger.evaluate" timestamp="1640053518985">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="295" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1627003328769" />
-    <state x="689" y="308" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1627028603283">
+    <state x="661" y="482" width="839" height="558" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1640053518985" />
+    <state x="313" y="197" key="CommitChangelistDialog2" timestamp="1641059094350">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="689" y="308" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1627028603283" />
-    <state x="580" y="197" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1626674202076">
+    <state x="313" y="197" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1641059094350" />
+    <state x="94" y="129" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1635990228042" />
+    <state width="1220" height="541" key="DebuggerActiveHint" timestamp="1640067961047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="580" y="197" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626674202076" />
-    <state x="489" y="442" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1626402404249">
+    <state width="1220" height="541" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1640067961047" />
+    <state x="184" y="85" width="1510" height="860" key="DiffContextDialog" timestamp="1641057970957">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="489" y="442" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626402404249" />
-    <state x="578" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1626673303874">
+    <state x="184" y="85" width="1510" height="860" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1641057970957" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1640841725780">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="578" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626673303874" />
-    <state x="690" y="266" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1628061866652">
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1640841725780" />
+    <state width="1877" height="355" key="GridCell.Tab.0.bottom" timestamp="1641096439109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1628061866652" />
-    <state x="638" y="366" width="490" height="558" key="#xdebugger.evaluate" timestamp="1628138047786">
+    <state width="1877" height="355" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1641096439109" />
+    <state width="1877" height="394" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1635991512632" />
+    <state width="1877" height="355" key="GridCell.Tab.0.center" timestamp="1641096439109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="638" y="366" width="490" height="558" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1628138047786" />
-    <state x="622" y="154" key="CommitChangelistDialog2" timestamp="1628141083423">
+    <state width="1877" height="355" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1641096439109" />
+    <state width="1877" height="394" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1635991512632" />
+    <state width="1877" height="355" key="GridCell.Tab.0.left" timestamp="1641096439109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="622" y="154" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1628141083423" />
-    <state width="876" height="591" key="DebuggerActiveHint" timestamp="1628070896386">
+    <state width="1877" height="355" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1641096439109" />
+    <state width="1877" height="394" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1635991512632" />
+    <state width="1877" height="355" key="GridCell.Tab.0.right" timestamp="1641096439109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="876" height="591" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1628070896386" />
-    <state x="184" y="85" width="1536" height="860" key="DiffContextDialog" timestamp="1628140718111">
+    <state width="1877" height="355" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1641096439109" />
+    <state width="1877" height="394" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1635991512632" />
+    <state width="1877" height="355" key="GridCell.Tab.1.bottom" timestamp="1641096439110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="184" y="85" width="1536" height="860" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1628140718111" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1627869544863">
+    <state width="1877" height="355" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1641096439110" />
+    <state width="1877" height="394" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1635991512476" />
+    <state width="1877" height="355" key="GridCell.Tab.1.center" timestamp="1641096439110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1627869544863" />
-    <state width="1877" height="349" key="GridCell.Tab.0.bottom" timestamp="1628234783445">
+    <state width="1877" height="355" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1641096439110" />
+    <state width="1877" height="394" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1635991512476" />
+    <state width="1877" height="355" key="GridCell.Tab.1.left" timestamp="1641096439109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1628234783445" />
-    <state width="1877" height="349" key="GridCell.Tab.0.center" timestamp="1628234783445">
+    <state width="1877" height="355" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1641096439109" />
+    <state width="1877" height="394" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1635991512476" />
+    <state width="1877" height="355" key="GridCell.Tab.1.right" timestamp="1641096439110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1628234783445" />
-    <state width="1877" height="349" key="GridCell.Tab.0.left" timestamp="1628234783445">
+    <state width="1877" height="355" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1641096439110" />
+    <state width="1877" height="394" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1635991512476" />
+    <state width="1877" height="355" key="GridCell.Tab.2.bottom" timestamp="1641096439110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1628234783445" />
-    <state width="1877" height="349" key="GridCell.Tab.0.right" timestamp="1628234783445">
+    <state width="1877" height="355" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1641096439110" />
+    <state width="1877" height="394" key="GridCell.Tab.2.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1635991512477" />
+    <state width="1877" height="355" key="GridCell.Tab.2.center" timestamp="1641096439110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1628234783445" />
-    <state width="1877" height="349" key="GridCell.Tab.1.bottom" timestamp="1628234783370">
+    <state width="1877" height="355" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1641096439110" />
+    <state width="1877" height="394" key="GridCell.Tab.2.center/0.0.1920.1080@0.0.1920.1080" timestamp="1635991512477" />
+    <state width="1877" height="355" key="GridCell.Tab.2.left" timestamp="1641096439110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1628234783370" />
-    <state width="1877" height="349" key="GridCell.Tab.1.center" timestamp="1628234783370">
+    <state width="1877" height="355" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1641096439110" />
+    <state width="1877" height="394" key="GridCell.Tab.2.left/0.0.1920.1080@0.0.1920.1080" timestamp="1635991512477" />
+    <state width="1877" height="355" key="GridCell.Tab.2.right" timestamp="1641096439110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1628234783370" />
-    <state width="1877" height="349" key="GridCell.Tab.1.left" timestamp="1628234783370">
+    <state width="1877" height="355" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1641096439110" />
+    <state width="1877" height="394" key="GridCell.Tab.2.right/0.0.1920.1080@0.0.1920.1080" timestamp="1635991512477" />
+    <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1637817035648">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1628234783370" />
-    <state width="1877" height="349" key="GridCell.Tab.1.right" timestamp="1628234783370">
+    <state x="490" y="174" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1637817035648" />
+    <state x="709" y="221" key="RollbackChangesDialog" timestamp="1641057979129">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1628234783370" />
-    <state width="1877" height="349" key="GridCell.Tab.2.bottom" timestamp="1628234783371">
+    <state x="709" y="221" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1641057979129" />
+    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1640053266990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1628234783371" />
-    <state width="1877" height="349" key="GridCell.Tab.2.center" timestamp="1628234783370">
+    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1640053266990" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1639989330298">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1628234783370" />
-    <state width="1877" height="349" key="GridCell.Tab.2.left" timestamp="1628234783370">
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1639989330298" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1637141439378">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1628234783370" />
-    <state width="1877" height="349" key="GridCell.Tab.2.right" timestamp="1628234783370">
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1637141439378" />
+    <state x="690" y="279" key="extract.method.dialog" timestamp="1639548529753">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1628234783370" />
-    <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1626946158730">
+    <state x="690" y="279" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1639548529753" />
+    <state x="398" y="170" width="1046" height="584" key="find.popup" timestamp="1641099786843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="490" y="174" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626946158730" />
-    <state x="709" y="221" key="RollbackChangesDialog" timestamp="1627294341286">
+    <state x="398" y="170" width="1046" height="584" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1641099786843" />
+    <state x="568" y="221" width="1046" height="607" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1635990266146" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1636106734345">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="709" y="221" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1627294341286" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1626686291809">
+    <state width="600" height="428" key="javadoc.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1636106734345" />
+    <state x="736" y="276" key="refactoring.ChangeSignatureDialog" timestamp="1639379717069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1626686291809" />
-    <state x="681" y="261" width="564" height="524" key="StructurePopup" timestamp="1628065032960">
+    <state x="736" y="276" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1639379717069" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1640430428808">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="681" y="261" width="564" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1628065032960" />
-    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1627887480828">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1640430428808" />
+    <state x="616" y="173" width="670" height="676" key="search.everywhere.popup" timestamp="1639990351874">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1627887480828" />
-    <state x="759" y="297" key="chooseDestDirectoryDialog" timestamp="1627003359810">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="759" y="297" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1627003359810" />
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1627959963622">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1627959963622" />
-    <state x="504" y="248" width="911" height="642" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1628215635529">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="504" y="248" width="911" height="642" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1628215635529" />
-    <state x="662" y="96" width="951" height="584" key="find.popup" timestamp="1628240782753">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="662" y="96" width="951" height="584" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1628240782753" />
-    <state x="367" y="360" key="new project wizard" timestamp="1626943037115">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="367" y="360" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1626943037115" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1628065311499">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1628065311499" />
-    <state x="533" y="202" key="spring file set editor" timestamp="1626057840091">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="533" y="202" key="spring file set editor/0.0.1920.1040@0.0.1920.1040" timestamp="1626057840091" />
+    <state x="616" y="173" width="670" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1639990351874" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/core/src/main/java/github/microgalaxy/mqtt/broker/protocol/MqttPingReq.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="14" />
+          <url>jar://$MAVEN_REPOSITORY$/org/apache/ignite/ignite-core/2.11.0/ignite-core-2.11.0-sources.jar!/org/apache/ignite/spi/discovery/tcp/ServerImpl.java</url>
+          <line>1125</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -5,18 +5,11 @@ package github.microgalaxy.mqtt.broker.internal;
  *
  * @author Microgalaxy（https://github.com/micro-galaxy）
  */
-public interface IInternalCommunication {
+public interface IInternalCommunication<T> {
     /**
      * InternalMessage arrives
      *
      * @param message
      */
-    void onInternalMessage(InternalMessage message);
-
-    /**
-     * Sending internal broadcast messages
-     *
-     * @param message
-     */
-    void sendInternalMessage(InternalMessage message);
+    void onInternalMessage(T message);
 }

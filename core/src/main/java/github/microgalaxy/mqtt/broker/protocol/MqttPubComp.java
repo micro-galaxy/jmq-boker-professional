@@ -1,7 +1,7 @@
 package github.microgalaxy.mqtt.broker.protocol;
 
-import github.microgalaxy.mqtt.broker.message.IMessagePacketId;
 import github.microgalaxy.mqtt.broker.message.IDupPubRelMessage;
+import github.microgalaxy.mqtt.broker.message.IMessagePacketId;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.mqtt.MqttMessage;
 import io.netty.handler.codec.mqtt.MqttMessageIdVariableHeader;

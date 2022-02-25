@@ -18,22 +18,22 @@ import java.util.stream.Collectors;
 @Component
 public class DupRetainMessageImpl implements IDupRetainMessage {
     @Resource
-    private IgniteCache<String, RetainMessage> retainMessageCatch;
+    private IgniteCache<String, RetainMessage> retainMessageCache;
 
     @Override
     public void put(String topic, RetainMessage retainMessage) {
-        retainMessageCatch.put(topic, retainMessage);
+        retainMessageCache.put(topic, retainMessage);
     }
 
     @Override
     public RetainMessage get(String topic) {
-        return retainMessageCatch.get(topic);
+        return retainMessageCache.get(topic);
     }
 
     @Override
     public List<RetainMessage> match(String subscribeTopic) {
         List<RetainMessage> matchedTopics = new ArrayList<>();
-        retainMessageCatch.forEach(en -> {
+        retainMessageCache.forEach(en -> {
             boolean matched = TopicUtils.matchingTopic(subscribeTopic, en.getKey());
             if (matched) matchedTopics.add(en.getValue());
         });
@@ -42,6 +42,6 @@ public class DupRetainMessageImpl implements IDupRetainMessage {
 
     @Override
     public void remove(String topic) {
-        retainMessageCatch.remove(topic);
+        retainMessageCache.remove(topic);
     }
 }

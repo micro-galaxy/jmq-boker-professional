@@ -17,44 +17,44 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class DupPubRelMessageImpl implements IDupPubRelMessage {
     @Resource
-    private IgniteCache<String, ConcurrentHashMap<Integer, DupPubRelMessage>> dupPubRelMessageCatch;
+    private IgniteCache<String, ConcurrentHashMap<Integer, DupPubRelMessage>> dupPubRelMessageCache;
     @Resource
     private IMessagePacketId messagePacketIdServer;
 
     @Override
     public void put(String clientId, DupPubRelMessage dupPubRelMessage) {
-        ConcurrentHashMap<Integer, DupPubRelMessage> messageMap = dupPubRelMessageCatch.containsKey(clientId) ?
-                dupPubRelMessageCatch.get(clientId) : new ConcurrentHashMap<>();
+        ConcurrentHashMap<Integer, DupPubRelMessage> messageMap = dupPubRelMessageCache.containsKey(clientId) ?
+                dupPubRelMessageCache.get(clientId) : new ConcurrentHashMap<>();
         messageMap.put(dupPubRelMessage.getMessageId(), dupPubRelMessage);
-        dupPubRelMessageCatch.put(clientId, messageMap);
+        dupPubRelMessageCache.put(clientId, messageMap);
     }
 
     @Override
     public List<DupPubRelMessage> get(String clientId) {
-        return dupPubRelMessageCatch.containsKey(clientId) ?
-                new ArrayList<>(dupPubRelMessageCatch.get(clientId).values()) :
+        return dupPubRelMessageCache.containsKey(clientId) ?
+                new ArrayList<>(dupPubRelMessageCache.get(clientId).values()) :
                 Collections.EMPTY_LIST;
     }
 
     @Override
     public void remove(String clientId, int messageId) {
-        if (!dupPubRelMessageCatch.containsKey(clientId)) return;
-        ConcurrentHashMap<Integer, DupPubRelMessage> messageMap = dupPubRelMessageCatch.get(clientId);
+        if (!dupPubRelMessageCache.containsKey(clientId)) return;
+        ConcurrentHashMap<Integer, DupPubRelMessage> messageMap = dupPubRelMessageCache.get(clientId);
         if (!messageMap.containsKey(messageId)) return;
         messageMap.remove(messageId);
         if (CollectionUtils.isEmpty(messageMap)) {
-            dupPubRelMessageCatch.remove(clientId);
+            dupPubRelMessageCache.remove(clientId);
         } else {
-            dupPubRelMessageCatch.put(clientId, messageMap);
+            dupPubRelMessageCache.put(clientId, messageMap);
         }
     }
 
     @Override
     public void removeClient(String clientId) {
-        if (!dupPubRelMessageCatch.containsKey(clientId)) return;
-        ConcurrentHashMap<Integer, DupPubRelMessage> messageMap = dupPubRelMessageCatch.get(clientId);
+        if (!dupPubRelMessageCache.containsKey(clientId)) return;
+        ConcurrentHashMap<Integer, DupPubRelMessage> messageMap = dupPubRelMessageCache.get(clientId);
         messageMap.forEach((k, v) -> messagePacketIdServer.releaseMessageId(v.getMessageId()));
         messageMap.clear();
-        dupPubRelMessageCatch.remove(clientId);
+        dupPubRelMessageCache.remove(clientId);
     }
 }

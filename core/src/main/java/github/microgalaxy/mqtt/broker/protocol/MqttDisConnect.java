@@ -3,12 +3,15 @@ package github.microgalaxy.mqtt.broker.protocol;
 import github.microgalaxy.mqtt.broker.client.ISessionStore;
 import github.microgalaxy.mqtt.broker.client.ISubscribeStore;
 import github.microgalaxy.mqtt.broker.client.Session;
+import github.microgalaxy.mqtt.broker.event.IBrokerEvent;
 import github.microgalaxy.mqtt.broker.message.IDupPubRelMessage;
 import github.microgalaxy.mqtt.broker.message.IDupPublishMessage;
+import github.microgalaxy.mqtt.broker.util.MqttEventUtils;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.mqtt.*;
 import io.netty.util.AttributeKey;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 /**
@@ -58,9 +61,12 @@ public class MqttDisConnect<T extends MqttMessageType, M extends MqttMessage> ex
 
     public void cleanSession(Channel channel) {
         String clientId = (String) channel.attr(AttributeKey.valueOf("clientId")).get();
-        subscribeStoreServer.removeClient(clientId);
-        dupPublishMessageServer.removeClient(clientId);
-        dupPubRelMessageServer.removeClient(clientId);
+        Session session = sessionServer.get(clientId);
+        if (session.isCleanSession()) {
+            subscribeStoreServer.removeClient(clientId);
+            dupPublishMessageServer.removeClient(clientId);
+            dupPubRelMessageServer.removeClient(clientId);
+        }
         sessionServer.remove(clientId);
     }
 }
